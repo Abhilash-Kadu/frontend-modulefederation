@@ -77,7 +77,7 @@ const newStudents = [
 
 export default function LessonplanShare({ footerLinks, appName }) {
   const { t } = useTranslation();
-  const Card = React.lazy(() => import("students/Card"));
+  //const Card = React.lazy(() => import("students/Card"));
   const [students, setStudents] = React.useState([]);
   const [showModal, setShowModal] = React.useState(false);
   const [showSuccessModal, setShowSuccessModal] = React.useState(false);

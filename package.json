@@ -3,7 +3,9 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/core",
+      "packages/lessonplans",
+      "packages/teacher-app"
     ]
   },
   "scripts": {
