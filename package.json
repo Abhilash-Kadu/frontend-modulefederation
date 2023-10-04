@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": {
     "packages": [
+      "packages/common-lib",
       "packages/core",
       "packages/lessonplans",
       "packages/teacher-app"
