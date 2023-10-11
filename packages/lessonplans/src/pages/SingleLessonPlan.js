@@ -230,43 +230,6 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
               Lesson Plan Not Found
             </Box>
           )}
-          <Box bg="white" p="5">
-            <H2 pb={"5"}>Related Videos</H2>
-            <VStack space="5">
-              {videoListData && videoListData.length > 0 ? (
-                videoListData.slice(0, 2).map((item, index) => {
-                  return (
-                    <VideoCard
-                      appName={appName}
-                      index={index}
-                      canShare={true}
-                      key={index}
-                      {...{ item, url: lessonPlan.streamingUrl }}
-                    />
-                  );
-                })
-              ) : (
-                <Box
-                  p="10"
-                  my="5"
-                  alignItems={"center"}
-                  rounded="lg"
-                  bg="viewNotification.600"
-                >
-                  {t("VIDEO_NOT_FOUND")}
-                </Box>
-              )}
-              <Box alignItems="center" p="3">
-                <Pressable
-                  alignItems="center"
-                  onPress={(e) => navigate(`/videos/list`)}
-                >
-                  {/* <Pressable alignItems="center" onPress={(e) => console.log(e)}> */}
-                  <Text color="button.500">{"Show More"}</Text>
-                </Pressable>
-              </Box>
-            </VStack>
-          </Box>
         </VStack>
       </Box>
       <CommentActionSheet

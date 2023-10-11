@@ -157,11 +157,11 @@ export const update = async (data = {}, headers = {}) => {
 }
 
 export const getLessonPlansLikes = async (id) => {
-    return await likeRegistryService.getAll({
-        contextId: {eq: id},
-        context: {eq: 'Lessonplans'},
-        type: {eq: 'like'}
-    })
+    // return await likeRegistryService.getAll({
+    //     contextId: {eq: id},
+    //     context: {eq: 'Lessonplans'},
+    //     type: {eq: 'like'}
+    // })
 }
 
 export const getLessonPlansComments = async (id, filter = {}) => {

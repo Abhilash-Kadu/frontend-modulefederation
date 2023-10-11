@@ -35,19 +35,19 @@ import getData from "./LessonPlansRegistryService";
 const colors = overrideColorTheme(colorTheme);
 
 export default function LessonPlansCard({ item, url, canShare, appName }) {
-  const { t } = useTranslation();
+ // const { t } = useTranslation();
   const [like, setLike] = React.useState({});
   const [likes, setLikes] = React.useState([]);
   const [showButtonArray, setShowButtonArray] = React.useState([]);
   const [comments, setComments] = React.useState([]);
   const navigate = useNavigate();
   const [random, setRandom] = React.useState();
-  const { sub } = jwt_decode(localStorage.getItem("token"));
+ // const { sub } = jwt_decode(localStorage.getItem("token"));
 
   React.useEffect(async (e) => {
     setRandom(Math.floor(Math.random() * (4 - 1) + 1) - 1);
-    await getLikes();
-    await getComments();
+   // await getLikes();
+    //await getComments();
     // if (item.state === DRAFT) {
     //   setShowButtonArray(["Like"]);
     // } else {
@@ -57,19 +57,19 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
   }, []);
 
   const getLikes = async () => {
-    const result = await lessonPlansRegistryService.getLessonPlansLikes(
-      item.id
-    );
-    const newData = result.find((e, index) => e.userId === sub);
-    setLikes(result ? result : []);
-    setLike(newData ? newData : {});
+    // const result = await lessonPlansRegistryService.getLessonPlansLikes(
+    //   item.id
+    // );
+    // const newData = result.find((e, index) => e.userId === sub);
+    // setLikes(result ? result : []);
+    // setLike(newData ? newData : {});
   };
 
   const getComments = async () => {
-    const result = await lessonPlansRegistryService.getLessonPlansComments(
-      item.id
-    );
-    setComments(result ? result : []);
+    // const result = await lessonPlansRegistryService.getLessonPlansComments(
+    //   item.id
+    // );
+    // setComments(result ? result : []);
   };
 
   const handleLike = async () => {
@@ -213,7 +213,7 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
                 _icon={{ size: 20 }}
                 color={colors.primary}
                 p="0"
-                onPress={handleLike}
+                // onPress={handleLike}
               />
             </Box>
           ) : (
@@ -226,7 +226,7 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
                 _icon={{ size: 20 }}
                 color="warmGray.700"
                 p="0"
-                onPress={handleShare}
+                // onPress={handleShare}
               />
             </Box>
           ) : (
