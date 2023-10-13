@@ -124,6 +124,7 @@ export const DEFAULT_THEME = async (theme) => {
 }
 
 export const getAppshellData = async (routes = [], role = '') => {
+  role = "teacher";
   try {
     if (role === '') {
       role = await getRole()
@@ -155,9 +156,10 @@ export const getAppshellData = async (routes = [], role = '') => {
 export const getRole = async () => {
   const jwt = getTokernUserInfo()
   const roles = jwt?.realm_access?.roles ? jwt?.realm_access?.roles : []
-  const resultRoles = await roleRegistryService.getAll()
-  const apiRoles = resultRoles?.map((e) => e.title)
-  return roles.find((e) => apiRoles?.includes(e))
+  //const resultRoles = await roleRegistryService.getAll()
+  return "teacher";
+  // const apiRoles = resultRoles?.map((e) => e.title)
+  // return roles.find((e) => apiRoles?.includes(e))
 }
 
 export const getTokernUserInfo = (token = '') => {

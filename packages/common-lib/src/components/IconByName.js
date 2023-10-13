@@ -114,7 +114,9 @@ function IconButton({ icon, isDisabled, prefix, ...props }) {
 
 export default function IconByName({ _icon, ...props }) {
   let icon = <React.Fragment />
-
+  if (!_icon?.size) {
+    _icon = { ..._icon, size: 24 }
+  }
   switch (props.name) {
     case 'ParentLineIcon':
       icon = (
