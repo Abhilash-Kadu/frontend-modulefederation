@@ -14,7 +14,8 @@ const interfaceData = {
     copyright: 'copyright',
     creator: 'creator',
     downloadUrl: "downloadUrl",
-    streamingUrl:"streamingUrl"
+    streamingUrl:"streamingUrl",
+    artifactUrl:"artifactUrl",
 }
 
 const filters = {
